@@ -1,6 +1,7 @@
 # Captcha Generation Script Documentation
-[README-EN.MD](README-EN.MD) English
-[README.MD](README.MD) 中文
+English https://github.com/softtool/captcha-generator/blob/main/README-EN.MD
+
+中文 https://github.com/softtool/captcha-generator/blob/main/README.md
 
 ## Overview
 This script is used to generate random captcha images and save them to a specified directory.

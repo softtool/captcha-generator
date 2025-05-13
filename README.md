@@ -1,6 +1,8 @@
 # 验证码生成脚本说明
-[README-EN.MD](README-EN.MD) English
-[README.MD](README.MD) 中文
+English https://github.com/softtool/captcha-generator/blob/main/README-EN.MD
+
+中文 https://github.com/softtool/captcha-generator/blob/main/README.md
+
 ## 概述
 该脚本用于生成随机验证码图片，并将其保存到指定目录。
 
