@@ -1,7 +1,17 @@
 # Captcha Generation Script Documentation
+[README-EN.MD](README-EN.MD) English
+[README.MD](README.MD) 中文
 
 ## Overview
 This script is used to generate random captcha images and save them to a specified directory.
+
+
+![8 + 6 =？_56670675.png](images/character/ImageCaptcha/8%20%2B%206%20%3D%EF%BC%9F_56670675.png)
+![3 + 8 =？_6cdd1e9d.png](images/character/ImageCaptcha/3%20%2B%208%20%3D%EF%BC%9F_6cdd1e9d.png)
+![jKsF_8ecb373d.png](images/character/ImageCaptcha/jKsF_8ecb373d.png)
+![sVAW_bdc54215.png](images/character/ImageCaptcha/sVAW_bdc54215.png)
+![子么来趣_7b951bcd.png](images/character/ImageCaptcha/%E5%AD%90%E4%B9%88%E6%9D%A5%E8%B6%A3_7b951bcd.png)
+![相这静讨_d7282dd6.png](images/character/ImageCaptcha/%E7%9B%B8%E8%BF%99%E9%9D%99%E8%AE%A8_d7282dd6.png)
 
 ## Features
 - **Supported Types**:

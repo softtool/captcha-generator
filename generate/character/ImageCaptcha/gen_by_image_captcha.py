@@ -192,9 +192,12 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    # batch_generate_arithmetic_captchas(10)
+    # 生成数字运算验证码
+    # batch_generate_arithmetic_captchas(2)
     # if args.arithmetic:
     #     batch_generate_arithmetic_captchas(args.count)
     # else:
     #     batch_generate_captchas(args.count, use_digits=True, use_letters=True, use_chinese=False)
+
+
     batch_generate_captchas(2, use_digits=True, use_letters=True, use_chinese=False)
