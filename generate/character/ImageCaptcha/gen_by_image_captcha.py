@@ -6,23 +6,27 @@
 - 纯数字（0-9）
 - 英文字母（a-zA-Z）
 - 常用汉字（可配置启用）
+- 数学运算表达式（如 3 + 5 =？）
 
-默认为4位长度，支持命令行参数控制数量。
+默认为4位长度，支持命令行参数控制数量和类型。
 生成的图片保存在项目根目录下的 images/character/ImageCaptcha 目录中。
 
 使用方法：
-1. 确保安装了 captcha 库 (pip install captcha)
-2. 运行脚本，生成的验证码文本和图片将显示在控制台和指定目录中。
-
-示例：
-python gen_by_image_captcha.py --count 20      # 生成20个默认类型的验证码（数字+字母）
-python gen_by_image_captcha.py --chinese      # 启用汉字验证码（需系统字体支持）
+1. 安装依赖：pip install captcha
+2. 运行脚本示例：
+   python gen_by_image_captcha.py --count 20           # 生成20个默认类型的验证码（数字+字母）
+   python gen_by_image_captcha.py --chinese           # 启用汉字验证码（需系统字体支持）
+   python gen_by_image_captcha.py --arithmetic        # 生成数学运算类验证码
+   python gen_by_image_captcha.py --no-use-digits     # 不使用数字
+   python gen_by_image_captcha.py --no-use-letters    # 不使用英文字母
 
 支持特性：
 - 多字体混合渲染（微软雅黑、Arial 等）
 - 字体大小随机变化
 - 支持常用汉字过滤（避免生僻字）
+- 可选是否添加哈希值防止重复文件名
 """
+
 
 
 from captcha.image import ImageCaptcha
@@ -189,15 +193,22 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="批量生成验证码")
     parser.add_argument("--count", type=int, default=10, help="要生成的验证码数量，默认为10")
     parser.add_argument("--arithmetic", action="store_true", help="是否生成数学运算类验证码")
+    parser.add_argument("--use-digits", action="store_true", default=True, help="是否使用数字，默认启用")
+    parser.add_argument("--use-letters", action="store_true", default=True, help="是否使用英文字母，默认启用")
+    parser.add_argument("--use-chinese", action="store_true", help="是否使用汉字，默认禁用")
 
     args = parser.parse_args()
 
-    # 生成数字运算验证码
-    # batch_generate_arithmetic_captchas(2)
-    # if args.arithmetic:
-    #     batch_generate_arithmetic_captchas(args.count)
-    # else:
-    #     batch_generate_captchas(args.count, use_digits=True, use_letters=True, use_chinese=False)
+    if args.arithmetic:
+        batch_generate_arithmetic_captchas(args.count)
+    else:
+        batch_generate_captchas(
+            count=args.count,
+            length=4,
+            use_digits=args.use_digits,
+            use_letters=args.use_letters,
+            use_chinese=args.use_chinese
+        )
 
 
     batch_generate_captchas(2, use_digits=True, use_letters=True, use_chinese=False)
